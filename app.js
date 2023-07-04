@@ -2,7 +2,6 @@ new Vue({
   el: "#app",
   data: {
     arrayOBJProdutos: [],
-    testeDeGit: "Olá!"
   },
   methods: {
     async fazerFetchGithub() {
