@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techno</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./vue.min.js"></script>
-  </head>
-  <body>
-    
-
-    <div id="app">
-      
-      <p>{{testeDeGit}}</p>
-
-    </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
 
 
-    
 
 
-    <script src="./app.js"></script>
-  </body>
+    <section class="produtos_section">
+      <div v-for="objProduto in arrayOBJProdutos" :key="objProduto.id" class="produto_div">
+        <img :src="objProduto.img" :alt="objProduto.nome" class="produto_imagem"/>
+        <div class="produto_info">
+          <span class="produto_preco">{{objProduto.preco}}</span>
+          <h2 class="produto_nome">{{objProduto.nome}}</h2>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+  </div>
+  <script src="./app.js"></script>
+</body>
 </html>
 

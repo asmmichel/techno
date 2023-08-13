@@ -1,8 +1,58 @@
-body {
-  background: #35363A;
-  color: white;
-  font-family: 'Comic Sans MS';
+
+/* Geral */
+
+* {
+  box-sizing: border-box;
 }
+
+body {
+  background: linear-gradient(to right, #1a1a1a 30%, #fff 30%);
+}
+
+body, h1, h2, ul, li {
+  font-family: 'Noto Serif';
+  padding: 0px;
+  margin: 0px;
+}
+
 a {
   color: #70b0ff;
 }
+
+ul {
+  list-style: none;
+}
+
+#app {
+  padding: 0px 80px;
+}
+
+/*  */
+
+.produtos_section {
+  max-width: 900px;
+  margin: 100px auto 0 auto;
+}
+
+.produto_div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  background: #ffffff;
+  box-shadow: 0 0 2rem rgba(0,0,0,.1)
+}
+
+.produto_imagem {
+  max-width: 300px;
+  margin-right: 40px;
+}
+
+.produto_nome {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.produto_preco {
+  color: rgba(0,0,0,.5);
+}
+
