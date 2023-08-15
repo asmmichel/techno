@@ -25,6 +25,7 @@
           <img :src="dadosProduto.img" :alt="dadosProduto.nome"/>
         </div>
         <div class="modal_dados">
+          <button @click="dadosProduto = false" class="modal_btn_fechar">X</button>
           <span class="modal_preco">{{dadosProduto.preco}}</span>
           <h2 class="modal_nome">{{dadosProduto.nome}}</h2>
           <p>{{dadosProduto.descricao}}</p>
