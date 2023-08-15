@@ -2,7 +2,7 @@ new Vue({
   el: "#app",
   data: {
     arrayOBJProdutos: [],
-    dadosProduto: {},
+    dadosProduto: false,
   },
   methods: {
     async fazerFetchGithub() {
@@ -10,6 +10,9 @@ new Vue({
     },
     async fazerFetchPastaProdutos(objProdutoId) {
       this.dadosProduto = await (await fetch(`./api/produtos/${objProdutoId}/dados.json`)).json()
+    },
+    fecharOModal({target, currentTarget}) {
+      if(target === currentTarget) this.dadosProduto = false;
     },
   },
   filters: {

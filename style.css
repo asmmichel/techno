@@ -83,12 +83,24 @@ ul {
 
 .modal_conteiner {
   position: relative;
-  background: linear-gradient(to right, transparent 250px, #FFF 250px);
+  background: linear-gradient(to right, rgba(0,0,0,.5) 250px, #FFF 250px);
   z-index: 1;
   display: grid;
   align-items: end;
   grid-gap: 50px;
   padding: 0px 50px 50px 0px;
+  animation: aparecerSuave .3s forwards;
+}
+
+@keyframes aparecerSuave {
+  from {
+    opacity: 0;
+    transform: translate3D(50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3D(0px, 0, 0);
+  }
 }
 
 .modal_btn_fechar {

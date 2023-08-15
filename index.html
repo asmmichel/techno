@@ -19,7 +19,7 @@
 
 
 
-    <section class="modal" v-if="dadosProduto">
+    <section class="modal" v-if="dadosProduto" @click="fecharOModal">
       <div class="modal_conteiner">
         <div class="modal_img">
           <img :src="dadosProduto.img" :alt="dadosProduto.nome"/>
