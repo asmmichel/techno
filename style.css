@@ -9,7 +9,7 @@ body {
   background: linear-gradient(to right, #1a1a1a 30%, #fff 30%);
 }
 
-body, h1, h2, ul, li {
+body, h1, h2, ul, li, p {
   font-family: 'Noto Serif';
   padding: 0px;
   margin: 0px;
@@ -27,7 +27,7 @@ ul {
   padding: 0px 80px;
 }
 
-/*  */
+/* Lista dos Produtos */
 
 .produtos_section {
   max-width: 900px;
@@ -39,7 +39,8 @@ ul {
   align-items: center;
   margin-bottom: 40px;
   background: #ffffff;
-  box-shadow: 0 0 2rem rgba(0,0,0,.1)
+  box-shadow: 0 0 2rem rgba(0,0,0,.1);
+  cursor: pointer;
 }
 
 .produto_imagem {
@@ -56,3 +57,118 @@ ul {
   color: rgba(0,0,0,.5);
 }
 
+/* Modal */
+
+.modal::before {
+  content: "";
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.5);
+}
+
+.modal {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 80px;
+}
+
+.modal_conteiner {
+  position: relative;
+  background: linear-gradient(to right, rgba(0,0,0,.5) 250px, #FFF 250px);
+  z-index: 1;
+  display: grid;
+  align-items: end;
+  grid-gap: 50px;
+  padding: 0px 50px 50px 0px;
+  animation: aparecerSuave .3s forwards;
+}
+
+@keyframes aparecerSuave {
+  from {
+    opacity: 0;
+    transform: translate3D(50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3D(0px, 0, 0);
+  }
+}
+
+.modal_btn_fechar {
+  border-radius: 50%;
+  border: 2px solid #000;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  box-shadow: 0px 3px 4px rgba(0,0,0,.1), 0px 4px 10px rgba(0,0,0,.2);
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.modal_img {
+  grid-column: 1;
+  margin-top: 50px;
+  box-shadow: 0px 3px 4px rgba(0,0,0,.1), 0px 4px 10px rgba(0,0,0,.2);
+}
+
+.modal_img img {
+  max-width: 300px;
+  display: block;
+}
+
+.modal_dados {
+  max-width: 600px;
+  grid-column: 2;
+}
+
+.modal_nome {
+  font-size: 3rem;
+}
+
+.modal_btn {
+  margin-top: 80px;
+  background: #000;
+  cursor: pointer;
+  color: #FFF;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 25px;
+  font-family: "Noto Serif";
+}
+
+.modal_btn::active {
+  background: #808080;
+}
+
+.modal_reviews {
+  grid-column: 2;
+}
+
+.modal_reviews_subtitulo {
+  font-size: 1.75rem;
+}
+
+.modal_review {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding-bottom: 20px;
+}
+
+.modal_review_descricao {
+  color: rgba(0,0,0,.7);
+  margin: 20px 0 5px 0;
+}
+
+.modal_review_nome {
+  font-weight: bold;
+}

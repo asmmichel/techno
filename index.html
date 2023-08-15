@@ -17,8 +17,43 @@
 
 
 
+
+
+    <section class="modal" v-if="dadosProduto" @click="fecharOModal">
+      <div class="modal_conteiner">
+        <div class="modal_img">
+          <img :src="dadosProduto.img" :alt="dadosProduto.nome"/>
+        </div>
+        <div class="modal_dados">
+          <button @click="dadosProduto = false" class="modal_btn_fechar">X</button>
+          <span class="modal_preco">{{dadosProduto.preco}}</span>
+          <h2 class="modal_nome">{{dadosProduto.nome}}</h2>
+          <p>{{dadosProduto.descricao}}</p>
+          <button class="modal_btn">Adicionar Item</button>
+        </div>
+        <div class="modal_reviews">
+          <h2 class="modal_reviews_subtitulo">Avaliações</h2>
+          <ul>
+            <li v-for="review in dadosProduto.reviews" class="modal_review">
+              <p class="modal_review_descricao">{{review.descricao}}</p>
+              <p class="modal_review_nome">{{review.nome}} - {{review.estrelas}} estrelas</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
     <section class="produtos_section">
-      <div v-for="objProduto in arrayOBJProdutos" :key="objProduto.id" class="produto_div">
+      <div v-for="objProduto in arrayOBJProdutos" :key="objProduto.id" class="produto_div" @click="fazerFetchPastaProdutos(objProduto.id)">
         <img :src="objProduto.img" :alt="objProduto.nome" class="produto_imagem"/>
         <div class="produto_info">
           <span class="produto_preco">{{objProduto.preco | precoFormatado}}</span>
