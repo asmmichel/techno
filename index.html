@@ -17,6 +17,14 @@
 
 
 
+    <header class="header">
+      <img class="logo" src="./assets/techno.svg" alt="Techno">
+      <div class="carrinho_menu">{{carrinhoTotal}} |</div>
+    </header>
+
+
+
+
 
     <section class="produtos_section">
       <div v-for="objProduto in arrayOBJProdutos" :key="objProduto.id" class="produto_div" @click="abrirOModal(objProduto.id)">

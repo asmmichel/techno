@@ -3,6 +3,7 @@ new Vue({
   data: {
     arrayOBJProdutos: [],
     dadosProduto: false,
+    carrinhoTotal: 0,
   },
   methods: {
     async fazerFetchGithub() {
