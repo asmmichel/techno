@@ -19,7 +19,7 @@
 
     <header class="header">
       <img class="logo" src="./assets/techno.svg" alt="Techno">
-      <div class="carrinho_menu">{{carrinhoTotal}} |</div>
+      <div class="carrinho_menu" @click="carrinhoAtivo = true">{{carrinhoTotal}} |</div>
     </header>
 
 
@@ -61,6 +61,17 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+
+
+
+
+    <section class="carrinho_modal" :class="{ativo: carrinhoAtivo}" @click="fecharOCarrinhoModal">
+      <div class="carrinho_modal_conteiner">
+        <button @click="carrinhoAtivo = false" class="carrinho_modal_btn_fechar">X</button>
+        <h2 class="carrinho_subtitulo">Carrinho</h2>
       </div>
     </section>
 

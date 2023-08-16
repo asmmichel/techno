@@ -4,6 +4,7 @@ new Vue({
     arrayOBJProdutos: [],
     dadosProduto: false,
     carrinhoTotal: 0,
+    carrinhoAtivo: false,
   },
   methods: {
     async fazerFetchGithub() {
@@ -18,6 +19,9 @@ new Vue({
     },
     fecharOModal({target, currentTarget}) {
       if(target === currentTarget) this.dadosProduto = false;
+    },
+    fecharOCarrinhoModal({target, currentTarget}) {
+      if(target === currentTarget) this.carrinhoAtivo = false;
     },
   },
   filters: {
