@@ -18,6 +18,19 @@
 
 
 
+    <section class="produtos_section">
+      <div v-for="objProduto in arrayOBJProdutos" :key="objProduto.id" class="produto_div" @click="abrirOModal(objProduto.id)">
+        <img :src="objProduto.img" :alt="objProduto.nome" class="produto_imagem"/>
+        <div class="produto_info">
+          <span class="produto_preco">{{objProduto.preco | precoFormatado}}</span>
+          <h2 class="produto_nome">{{objProduto.nome}}</h2>
+        </div>
+      </div>
+    </section>
+
+
+
+
 
     <section class="modal" v-if="dadosProduto" @click="fecharOModal">
       <div class="modal_conteiner">
@@ -42,26 +55,6 @@
         </div>
       </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-    <section class="produtos_section">
-      <div v-for="objProduto in arrayOBJProdutos" :key="objProduto.id" class="produto_div" @click="abrirOModal(objProduto.id)">
-        <img :src="objProduto.img" :alt="objProduto.nome" class="produto_imagem"/>
-        <div class="produto_info">
-          <span class="produto_preco">{{objProduto.preco | precoFormatado}}</span>
-          <h2 class="produto_nome">{{objProduto.nome}}</h2>
-        </div>
-      </div>
-    </section>
-
 
 
 
