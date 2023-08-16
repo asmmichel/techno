@@ -53,7 +53,7 @@
 
 
     <section class="produtos_section">
-      <div v-for="objProduto in arrayOBJProdutos" :key="objProduto.id" class="produto_div" @click="fazerFetchPastaProdutos(objProduto.id)">
+      <div v-for="objProduto in arrayOBJProdutos" :key="objProduto.id" class="produto_div" @click="abrirOModal(objProduto.id)">
         <img :src="objProduto.img" :alt="objProduto.nome" class="produto_imagem"/>
         <div class="produto_info">
           <span class="produto_preco">{{objProduto.preco | precoFormatado}}</span>
