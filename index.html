@@ -50,7 +50,7 @@
           <span class="modal_preco">{{dadosProduto.preco}}</span>
           <h2 class="modal_nome">{{dadosProduto.nome}}</h2>
           <p>{{dadosProduto.descricao}}</p>
-          <button class="modal_btn">Adicionar Item</button>
+          <button class="modal_btn" @click="adicionarNoCarrinho">Adicionar Item</button>
         </div>
         <div class="modal_reviews">
           <h2 class="modal_reviews_subtitulo">Avaliações</h2>
@@ -72,6 +72,7 @@
       <div class="carrinho_modal_conteiner">
         <button @click="carrinhoAtivo = false" class="carrinho_modal_btn_fechar">X</button>
         <h2 class="carrinho_subtitulo">Carrinho</h2>
+        <p class="carrinho_item">{{carrinho}}</p>
       </div>
     </section>
 

@@ -3,6 +3,7 @@ new Vue({
   data: {
     arrayOBJProdutos: [],
     dadosProduto: false,
+    carrinho: [],
     carrinhoTotal: 0,
     carrinhoAtivo: false,
   },
@@ -22,6 +23,9 @@ new Vue({
     },
     fecharOCarrinhoModal({target, currentTarget}) {
       if(target === currentTarget) this.carrinhoAtivo = false;
+    },
+    adicionarNoCarrinho() {
+      this.carrinho.push(this.dadosProduto.nome)
     },
   },
   filters: {
