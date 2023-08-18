@@ -28,6 +28,16 @@ new Vue({
       const { id, nome, preco } = this.dadosProduto
       this.carrinho.push({ id, nome, preco })
     },
+    puxarLocalStorage() {
+      if(window.localStorage.carrinho) {
+        this.carrinho = JSON.parse(window.localStorage.carrinho);
+      }
+    }
+  },
+  watch: {
+    carrinho() {
+      window.localStorage.carrinho = JSON.stringify(this.carrinho)
+    }
   },
   filters: {
     precoFormatado(value) {
@@ -36,5 +46,6 @@ new Vue({
   },
   created() {
     this.fazerFetchGithub();
+    this.puxarLocalStorage();
   },
 })
