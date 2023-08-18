@@ -5,7 +5,7 @@ new Vue({
     dadosProduto: false,
     carrinho: [],
     carrinhoTotal: 0,
-    carrinhoAtivo: false,
+    carrinhoAtivo: true,
   },
   methods: {
     async fazerFetchGithub() {

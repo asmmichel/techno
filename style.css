@@ -103,6 +103,23 @@ ul {
   right: -10px;
 }
 
+.carrinho_item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding: 10px 0;
+}
+
+.carrinho_subtitulo {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.carrinho_preco {
+  text-align: right;
+}
+
 
 
 /* Lista dos Produtos */
