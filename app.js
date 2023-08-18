@@ -25,7 +25,8 @@ new Vue({
       if(target === currentTarget) this.carrinhoAtivo = false;
     },
     adicionarNoCarrinho() {
-      this.carrinho.push(this.dadosProduto.nome)
+      const { id, nome, preco } = this.dadosProduto
+      this.carrinho.push({ id, nome, preco })
     },
   },
   filters: {

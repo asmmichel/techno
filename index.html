@@ -72,7 +72,11 @@
       <div class="carrinho_modal_conteiner">
         <button @click="carrinhoAtivo = false" class="carrinho_modal_btn_fechar">X</button>
         <h2 class="carrinho_subtitulo">Carrinho</h2>
-        <p class="carrinho_item">{{carrinho}}</p>
+        <ul class="carrinho_lista">
+          <li v-for="item in carrinho">
+            <p>{{item.nome}} - {{item.preco | precoFormatado}}</p>
+          </li>
+        </ul>
       </div>
     </section>
 
