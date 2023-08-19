@@ -32,7 +32,10 @@ new Vue({
       if(window.localStorage.carrinho) {
         this.carrinho = JSON.parse(window.localStorage.carrinho);
       }
-    }
+    },
+    removerDoCarinho(index) {
+      this.carrinho.splice(index, 1)
+    },
   },
   watch: {
     carrinho() {

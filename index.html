@@ -73,9 +73,10 @@
         <button @click="carrinhoAtivo = false" class="carrinho_modal_btn_fechar">X</button>
         <h2 class="carrinho_subtitulo">Carrinho</h2>
         <ul class="carrinho_lista">
-          <li v-for="item in carrinho" class="carrinho_item">
+          <li v-for="(item, index) in carrinho" class="carrinho_item">
             <p>{{item.nome}}</p>
             <p class="carrinho_preco">{{item.preco | precoFormatado}}</p>
+            <button @click="removerDoCarinho(index)" class="carrinho_item_btn_fechar">X</button>
           </li>
         </ul>
       </div>

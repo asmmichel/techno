@@ -105,7 +105,7 @@ ul {
 
 .carrinho_item {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 50px;
   border-bottom: 1px solid rgba(0,0,0,.1);
   padding: 10px 0;
 }
@@ -120,6 +120,13 @@ ul {
   text-align: right;
 }
 
+.carrinho_item_btn_fechar {
+  border: none;
+  font-size: 1rem;
+  cursor:pointer;
+  background: #FFF;
+  padding-top: 3px;
+}
 
 
 /* Lista dos Produtos */
