@@ -19,7 +19,7 @@
 
     <header class="header">
       <img class="logo" src="./assets/techno.svg" alt="Techno">
-      <div class="carrinho_menu" @click="carrinhoAtivo = true">{{carrinhoTotal}} |</div>
+      <div class="carrinho_menu" @click="carrinhoAtivo = true">{{carrinhoTotal | precoFormatado}} | {{carrinho.length}}</div>
     </header>
 
 
@@ -79,6 +79,8 @@
             <button @click="removerDoCarinho(index)" class="carrinho_item_btn_fechar">X</button>
           </li>
         </ul>
+        <p class="carrinho_total">{{carrinhoTotal | precoFormatado}}</p>
+        <button class="carrinho_btn_finalizar">Finalizar Compra</button>
       </div>
     </section>
 

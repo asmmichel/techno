@@ -4,8 +4,28 @@ new Vue({
     arrayOBJProdutos: [],
     dadosProduto: false,
     carrinho: [],
-    carrinhoTotal: 0,
     carrinhoAtivo: true,
+  },
+  computed: {
+    carrinhoTotal() {
+      let total = 0;
+      if (this.carrinho.length) {
+        this.carrinho.forEach(item => {
+          total += item.preco;
+        })
+      }
+      return total;
+    }
+  },
+  watch: {
+    carrinho() {
+      window.localStorage.carrinho = JSON.stringify(this.carrinho)
+    }
+  },
+  filters: {
+    precoFormatado(value) {
+      return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    }
   },
   methods: {
     async fazerFetchGithub() {
@@ -36,16 +56,6 @@ new Vue({
     removerDoCarinho(index) {
       this.carrinho.splice(index, 1)
     },
-  },
-  watch: {
-    carrinho() {
-      window.localStorage.carrinho = JSON.stringify(this.carrinho)
-    }
-  },
-  filters: {
-    precoFormatado(value) {
-      return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-    }
   },
   created() {
     this.fazerFetchGithub();
