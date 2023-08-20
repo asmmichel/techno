@@ -50,8 +50,8 @@
           <span class="modal_preco">{{dadosProduto.preco}}</span>
           <h2 class="modal_nome">{{dadosProduto.nome}}</h2>
           <p>{{dadosProduto.descricao}}</p>
-          <button class="modal_btn" @click="adicionarNoCarrinho">Adicionar Item</button>
-          <p>{{dadosProduto.estoque}}</p>
+          <button v-if="dadosProduto.estoque" class="modal_btn" @click="adicionarNoCarrinho">Adicionar Item</button>
+          <button v-else class="modal_btn_esgotado" disabled>Produto Esgotado</button>
         </div>
         <div class="modal_reviews">
           <h2 class="modal_reviews_subtitulo">Avaliações</h2>

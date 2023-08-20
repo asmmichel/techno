@@ -268,8 +268,19 @@ ul {
   font-family: "Noto Serif";
 }
 
-.modal_btn::active {
+.modal_btn:active {
   background: #808080;
+}
+
+.modal_btn_esgotado {
+  margin-top: 80px;
+  background: #808080;
+  cursor: pointer;
+  color: #FFF;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 25px;
+  font-family: "Noto Serif";
 }
 
 .modal_reviews {
