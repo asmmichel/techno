@@ -47,7 +47,7 @@
         </div>
         <div class="modal_dados">
           <button @click="dadosProduto = false" class="modal_btn_fechar">X</button>
-          <span class="modal_preco">{{dadosProduto.preco}}</span>
+          <span class="modal_preco">{{dadosProduto.preco | precoFormatado}}</span>
           <h2 class="modal_nome">{{dadosProduto.nome}}</h2>
           <p>{{dadosProduto.descricao}}</p>
           <button v-if="dadosProduto.estoque" class="modal_btn" @click="adicionarNoCarrinho">Adicionar Item</button>
@@ -87,6 +87,14 @@
         <p v-else>O carrinho está vazio.</p>
       </div>
     </section>
+
+
+
+
+
+    <div class="alerta" :class="{ativo: alertaAtivo}">
+      <p class="alerta_mensagem">{{alertaMensagem}}</p>
+    </div>
 
 
 

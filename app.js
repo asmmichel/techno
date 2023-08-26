@@ -5,6 +5,8 @@ new Vue({
     dadosProduto: false,
     carrinho: [],
     carrinhoAtivo: false,
+    alertaAtivo: false,
+    alertaMensagem: "Item adicionado",
   },
   computed: {
     carrinhoTotal() {
@@ -24,7 +26,7 @@ new Vue({
       }
     },
     carrinho() {
-      window.localStorage.carrinho = JSON.stringify(this.carrinho)
+      window.localStorage.carrinho = JSON.stringify(this.carrinho);
     }
   },
   filters: {
@@ -34,14 +36,14 @@ new Vue({
   },
   methods: {
     async fazerFetchGithub() {
-      this.arrayOBJProdutos = await (await fetch("./api/produtos.json")).json()
+      this.arrayOBJProdutos = await (await fetch("./api/produtos.json")).json();
     },
     async fazerFetchPastaProdutos(objProdutoId) {
-      this.dadosProduto = await (await fetch(`./api/produtos/${objProdutoId}/dados.json`)).json()
+      this.dadosProduto = await (await fetch(`./api/produtos/${objProdutoId}/dados.json`)).json();
     },
     abrirOModal(objProdutoId) {
       this.fazerFetchPastaProdutos(objProdutoId);
-      window.scrollTo({top: 0, behavior: "smooth"})
+      window.scrollTo({top: 0, behavior: "smooth"});
     },
     fecharOModal({target, currentTarget}) {
       if(target === currentTarget) this.dadosProduto = false;
@@ -51,8 +53,9 @@ new Vue({
     },
     adicionarNoCarrinho() {
       this.dadosProduto.estoque--;
-      const { id, nome, preco } = this.dadosProduto
-      this.carrinho.push({ id, nome, preco })
+      const { id, nome, preco } = this.dadosProduto;
+      this.carrinho.push({ id, nome, preco });
+      this.aparecerAlerta(`${nome} adicionado ao carrinho.`);
     },
     verificarOEstoque() {
       this.dadosProduto.estoque -= this.carrinho.filter(({id}) => id === this.dadosProduto.id).length;
@@ -63,7 +66,14 @@ new Vue({
       }
     },
     removerDoCarinho(index) {
-      this.carrinho.splice(index, 1)
+      this.carrinho.splice(index, 1);
+    },  
+    aparecerAlerta(alertaMensagem) {
+      this.alertaMensagem = alertaMensagem;
+      this.alertaAtivo = true;
+      setTimeout(() => {
+        this.alertaAtivo = false;
+      }, 1500);
     },
   },
   created() {
